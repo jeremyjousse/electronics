@@ -1,0 +1,83 @@
+###
+
+GET {{$dotenv HOME_ASSISTANT_URL}}/api/config HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+### 
+
+GET {{$dotenv HOME_ASSISTANT_URL}}/api/services HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+### 
+
+GET {{$dotenv HOME_ASSISTANT_URL}}/api/states HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+### 
+
+POST {{$dotenv HOME_ASSISTANT_URL}}/api/states/input_number.my_test_value HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+{
+    "state": "10.0",
+    "attributes": {
+
+    }
+}
+###
+
+GET {{$dotenv HOME_ASSISTANT_URL}}/api/services HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+### 
+
+POST {{$dotenv HOME_ASSISTANT_URL}}/api/states/sensor.watering_system_temperature HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+{
+    "entry.id": "watering_system_temperature",
+    "state": 20.0
+}
+
+### 
+
+POST {{$dotenv HOME_ASSISTANT_URL}}/api/states/input_number.watering_system_moisture HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+{
+    "entry.id": "watering_system_moisture",
+    "state": 50
+}
+### 
+
+POST {{$dotenv HOME_ASSISTANT_URL}}/api/states/input_number.watering_system_moisture HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+{
+    "entry.id": "watering_system_moisture",
+    "state": 50
+}
+### 
+
+POST {{$dotenv HOME_ASSISTANT_URL}}/api/states/sensor.watering_system_temperature HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv HOME_ASSISTANT_TOKEN}}
+
+{
+    "entity_id": "sensor.watering_system_temperature",
+    "state": 20,
+    "attributes": {
+      "unit_of_measurement": "°c",
+      "icon": "mdi:temperature-celsius",
+      "friendly_name": "Watering system temperature"
+    }
+  }
+

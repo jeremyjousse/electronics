@@ -1,0 +1,30 @@
+- platform: template
+  sensors:
+    watering_system_temperature:
+      unique_id: watering_system_temperature
+      friendly_name: "Watering system temperature"
+      value_template: >-
+        "{{ states.sensor.watering_system_temperature.state }}"
+      icon_template: mdi:coolant-temperature
+      unit_of_measurement: "°C"
+    watering_system_humidity:
+      unique_id: watering_system_humidity
+      friendly_name: "Watering system humidity"
+      value_template: >-
+        "{{ states.sensor.watering_system_humidity.state }}"
+      icon_template: mdi:air-humidifier
+      unit_of_measurement: "%"
+    watering_system_moisture:
+      unique_id: watering_system_moisture
+      friendly_name: "Watering system moisture"
+      value_template: >-
+        "{{ states.sensor.watering_system_moisture.state}}"
+      icon_template: mdi:water-percent
+      unit_of_measurement: "%"
+    watering_system_water_level:
+      unique_id: watering_system_water_level
+      friendly_name: "Watering system water level"
+      value_template: >-
+        "{{ states.sensor.watering_system_water_level.state }}"
+      icon_template: mdi:watering-can
+      unit_of_measurement: "cm"
